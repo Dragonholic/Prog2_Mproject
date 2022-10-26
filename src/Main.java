@@ -5,50 +5,75 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        int[] gr_loc;   //ê´‘ì„ìœ„ì¹˜
-        int[] gr_wei;   //ë§¤ì¥ëŸ‰
+        double[] gr_loc;   //±¤¼®À§Ä¡
+        double[] gr_wei;   //¸ÅÀå·®
 
-        int HP = 100;
-        int STR = 10;
-        int DEX = 10;
-        int INT = 10;   //ê° ëŠ¥ë ¥ì¹˜
+        int Hp = 100;
+        int Str = 25;
+        int Dex = 25;
+        int Int = 25;   // °ª ÃÊ±âÈ­
 
-
-        System.out.printf("%d %d %d %d" ,HP,STR,DEX,INT );
-
-
-        int N = scanner.nextInt();  //ì¹¸ ìˆ˜ ì…ë ¥
-        gr_loc = new int[N];
-        gr_wei = new int[N];
-
-        int total_len =0;
-        int total_wei =0;
-        int total_num = 0;
-        int total_mon = 0;
-
-        for (int i = 0; i<N; i++){
-            gr_loc[i] = scanner.nextInt();
-            gr_wei[i] = scanner.nextInt();
-
-            if (gr_loc[i] > 1000 || gr_wei[i] > 1000 ){
-                System.out.print("\n");
-                System.out.println("-1");
-                System.exit(-1);
-            }   //1km, 1í†¤ ì´ˆê³¼ì‹œ íƒˆì¶œ
-
-            total_num +=
-            total_mon += (gr_wei[i]*1000);
-            total_len += gr_loc[i];
-            total_wei += gr_wei[i];
+        if (args.length != 0) {
+            Hp = Integer.parseInt(args[0]);
+            Str = Integer.parseInt(args[1]);
+            Dex = Integer.parseInt(args[2]);
+            Int = Integer.parseInt(args[3]);        // arg¿¡ °ªÀÌ ÀÖÀ»°æ¿ì »ğÀÔ
         }
 
 
+        int HP = Hp;
+        double STR = Str;
+        double DEX = Dex;
+        double INT = Int;   //°¢ ´É·ÂÄ¡ ÃÖÁ¾ Á¤¸®
 
 
+        System.out.printf("%d %d %d %d \n", HP, (int) STR, (int) DEX, (int) INT); //ÃÊ±â ´É·ÂÄ¡ Ãâ·Â
 
-        System.out.print(total_len+" m "+total_wei+" kg "+total_num+" ë²ˆ "+total_mon+" won ");
+
+        int N = scanner.nextInt();  //Ä­ ¼ö ÀÔ·Â
+        gr_loc = new double[N];
+        gr_wei = new double[N];
+
+        int pit_num = 0;
+        int ore_num = 0;
+        int total_pit_num = 0;  //ÃÑ ±¸µ¢ÀÌ ÆÇ È½¼ö
+        int total_ore_num = 0;  //ÃÑ ±¤¼® ÆÇ È½¼ö
+        int total_mon = 0;  //±¤¼® ÆÇ¸Å ±İ¾×
 
 
+        for (int i = 0; i < N; i++) {                      //¶¥ÆÄ±â
+            gr_loc[i] = scanner.nextInt();
+            gr_wei[i] = scanner.nextInt();
+
+            if (gr_loc[i] > 1000 || gr_wei[i] > 1000) {
+                System.out.print("\n");
+                System.out.println("-1(1km ¶Ç´Â 1tÃÊ°ú )" + i + "Â°");
+                System.exit(-1);
+            }   //1km, 1Åæ ÃÊ°ú½Ã Å»Ãâ
+
+
+            pit_num = (int) Math.ceil(gr_loc[i] / DEX);
+            ore_num = (int) Math.ceil(gr_wei[i] / STR);
+
+            total_pit_num += pit_num; // i¹ø ±¸µ¢ÀÌ¸¦ ¸î¹ø ÆÍ´ÂÁö += ÀüÃ¼ÇÕ
+            total_ore_num += ore_num; // i¹ø ±¤¼®À» ¸î¹ø Äº´ÂÁö  += ÀüÃ¼ÇÕ
+            total_mon += gr_wei[i] * 1000;
+
+            HP -= (pit_num + ore_num) * (100 / INT);
+
+            if (HP <= 0) {
+                System.out.print("\n");
+                System.out.println("-1(HP 0 ÀÌÇÏ)" + i + "¹ø");
+                System.exit(-1);
+            } // HP°¡ ¿µÀÌÇÏ·Î ³»·Á°¡¸é Å»Ãâ
+
+
+        }
+
+
+        System.out.println(HP + " " + (int) STR + " " + (int) DEX + " " + (int) INT);
+        System.out.println((int) (STR + DEX + INT) + " " + total_pit_num + " " + total_ore_num);
+        System.out.println(total_mon);
 
 
     }
