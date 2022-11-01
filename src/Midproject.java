@@ -1,8 +1,17 @@
 
+
+/*
+중간과제 3 Dig, Work, Sell, Buy
+202001606, 고용운, Dragonholic
+작성일: 2022-11-01
+*/
+
+
+
 import java.util.Scanner;
 
 
-public class Main {
+public class Midproject {
 
 
     public static void main(String[] args) {
