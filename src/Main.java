@@ -44,14 +44,14 @@ public class Main {
         item[6] = 1200;     //ªß       HP +10
         item[7] = 900;      //√•       INT +10
 
-        item_name[0] =  "¡¡¿∫∞Ó±™¿Ã/G G";
-        item_name[1] =  "¡¡¿∫Ω≈πﬂ/G S";
-        item_name[2] =  "¡¡¿∫√•/G B";
-        item_name[3] =  "¡¡¿∫ªß/G Br";
-        item_name[4] =  "∞Ó±™¿Ã?G";
-        item_name[5] =  "Ω≈πﬂ/S";
-        item_name[6] =  "ªß/Br";
-        item_name[7] =  "√•/B";
+        item_name[0] =  "¡¡¿∫∞Ó±™¿Ã";
+        item_name[1] =  "¡¡¿∫Ω≈πﬂ";
+        item_name[2] =  "¡¡¿∫√•";
+        item_name[3] =  "¡¡¿∫ªß";
+        item_name[4] =  "∞Ó±™¿Ã";
+        item_name[5] =  "Ω≈πﬂ";
+        item_name[6] =  "ªß";
+        item_name[7] =  "√•";
 
 
 
@@ -138,7 +138,6 @@ public class Main {
                                 total_mon -= item[j];       // ¡ˆ√‚
                                 total_spend += item[j];     // ¡ˆ√‚«’
                                 check_item[j] = false;      // ∆»∏≤
-                                System.out.println(" 0∆»∏≤");
                                 break;
                             }
                             case 1 -> { //¡¡¿∫Ω≈πﬂ  DEX MAX
@@ -147,7 +146,6 @@ public class Main {
                                 total_mon -= item[j];       // ¡ˆ√‚
                                 total_spend += item[j];     // ¡ˆ√‚«’
                                 check_item[j] = false;      // ∆»∏≤
-                                System.out.println(" 1∆»∏≤");
 
                                 break;
                             }
@@ -156,7 +154,6 @@ public class Main {
                                 total_mon -= item[j];       // ¡ˆ√‚
                                 total_spend += item[j];     // ¡ˆ√‚«’
                                 check_item[j] = false;      // ∆»∏≤
-                                System.out.println(" 2∆»∏≤");
                                 break;
                             }
                             case 3 -> { //¡¡¿∫ªß   HP +50
@@ -168,7 +165,6 @@ public class Main {
                                     total_mon -= item[j];       // ¡ˆ√‚
                                     total_spend += item[j];     // ¡ˆ√‚«’
                                     check_item[j] = false;      // ∆»∏≤
-                                    System.out.println(" 3∆»∏≤");
                                 }
                                 break;
                             }
@@ -178,7 +174,6 @@ public class Main {
                                     total_mon -= item[j];       // ¡ˆ√‚
                                     total_spend += item[j];     // ¡ˆ√‚«’
                                     check_item[j] = false;      // ∆»∏≤
-                                    System.out.println(" 4∆»∏≤");
                                 }
                                 break;
                             }
@@ -188,7 +183,6 @@ public class Main {
                                     total_mon -= item[j];       // ¡ˆ√‚
                                     total_spend += item[j];     // ¡ˆ√‚«’
                                     check_item[j] = false;      // ∆»∏≤
-                                    System.out.println(" 5∆»∏≤");
                                 }
                                 break;
                             }
@@ -201,7 +195,6 @@ public class Main {
                                     total_mon -= item[j];       // ¡ˆ√‚
                                     total_spend += item[j];     // ¡ˆ√‚«’
                                     check_item[j] = false;      // ∆»∏≤
-                                    System.out.println(" 6∆»∏≤");
                                 }
                                 break;
                             }
@@ -211,7 +204,6 @@ public class Main {
                                     total_mon -= item[j];       // ¡ˆ√‚
                                     total_spend += item[j];     // ¡ˆ√‚«’
                                     check_item[j] = false;      // ∆»∏≤
-                                    System.out.println(" 7∆»∏≤");
                                 }
                                 break;
                             }
