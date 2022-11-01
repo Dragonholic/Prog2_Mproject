@@ -1,18 +1,8 @@
 
 import java.util.Scanner;
-import java.util.LinkedList;
-import java.util.Queue;
-
-
 
 
 public class Main {
-
-
-
-
-
-
 
 
     public static void main(String[] args) {
@@ -103,7 +93,7 @@ public class Main {
 
             if (gr_loc[i] > 1000 || gr_wei[i] > 1000) {
                 System.out.print("\n");
-                System.out.println("-1(1km 또는 1t초과 )" + i + "째");
+                System.out.println("-1" );
                 System.exit(-1);
             }   //1km, 1톤 초과시 탈출
 
@@ -119,7 +109,7 @@ public class Main {
 
             if (HP <= 0) {
                 System.out.print("\n");
-                System.out.println("-1(HP 0 이하)" + i + "번");
+                System.out.println("-1");
                 System.exit(-1);
             } // HP가 영이하로 내려가면 탈출
 
